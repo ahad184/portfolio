@@ -120,9 +120,9 @@ const Hero = () => {
           className="mt-16 grid grid-cols-2 gap-4 max-w-4xl mx-auto px-4 sm:gap-8 md:grid-cols-4"
         >
           {[
-            { value: 10, suffix: '+', label: 'Projects' },
+            { value: 40, suffix: '+', label: 'Projects' },
             { value: 4, suffix: '+', label: 'Years Experience' },
-            { value: 2, suffix: '', label: 'Live Client Systems' },
+            { value: 5, suffix: '', label: 'Live Client Systems' },
             { value: 15, suffix: '+', label: 'Technologies' },
           ].map((stat, index) => (
             <StatItem key={stat.label} {...stat} index={index} />
