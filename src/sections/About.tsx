@@ -75,6 +75,9 @@ const About = () => {
                 <p>
                   My stack is <span className="text-white font-medium">TypeScript</span> end to end: React on the frontend, Node.js with NestJS or Express on the backend, PostgreSQL with Prisma for data. I deploy on Linux servers with Docker, run CI/CD through GitHub Actions, and have learned first-hand why backups, monitoring and audit logs matter once a system is live.
                 </p>
+                <p>
+                  <span className="text-white font-medium">Head of IT Operations — IVYES 2026 (Roots IVY Entrepreneurial Summit)</span>
+                </p>
               </div>
             </motion.div>
           </motion.div>

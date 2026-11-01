@@ -9,6 +9,7 @@ interface Project {
   icon: string;
   githubUrl?: string;
   liveUrl?: string;
+  badge?: string;
   gradient: string;
   accentGradient: string;
   tilt?: number;
@@ -33,6 +34,25 @@ const projects: Project[] = [
     gradient: 'from-teal-500/20 via-cyan-500/10 to-blue-500/20',
     accentGradient: 'from-teal-500 to-cyan-600',
     tilt: 1,
+  },
+  {
+    title: 'IVYES 2026 — event registration & operations platform',
+    description:
+      'The registration and operations platform for the Roots IVY Entrepreneurial Summit (IVYES 2026) — a 3-day summit with 300+ participants, built and run as Head of IT Operations. Online registration with payment verification and receipt OCR, a participant portal, QR-based gate entry synced to an Android app via Firestore, live admin dashboards, and email/WhatsApp messaging with a paced send queue. Deployed on a self-managed Ubuntu VPS with GitHub Actions CI/CD, security hardening (role-based access, audit logging, rate limiting), nightly backups and uptime monitoring — zero downtime across the live event.',
+    tech: [
+      'Node.js / Express',
+      'Next.js',
+      'PostgreSQL',
+      'Nginx + PM2',
+      'GitHub Actions',
+      'Cloudflare',
+      'Firestore',
+    ],
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+    badge: 'Internal event platform',
+    gradient: 'from-indigo-500/20 via-violet-500/10 to-purple-500/20',
+    accentGradient: 'from-indigo-500 to-violet-600',
+    tilt: -0.5,
   },
   {
     title: 'Learning Management System',
@@ -256,6 +276,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 <Github size={16} />
                 Code
               </motion.a>
+            )}
+            {project.badge && !project.githubUrl && !project.liveUrl && (
+              <span className="inline-flex rounded-full border-2 border-dashed border-white/20 px-4 py-1.5 text-xs font-semibold text-muted-foreground">
+                {project.badge}
+              </span>
             )}
             {project.liveUrl && (
               <motion.a
